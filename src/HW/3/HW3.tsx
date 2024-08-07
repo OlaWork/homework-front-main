@@ -21,8 +21,10 @@ export const HW3 = () => {
   };
 
   const handleSave = (currentText: string) => {
-    setTexts([currentText, ...texts]);
-    setCurrentText("");
+    if (currentText !== "") {
+      setTexts([currentText, ...texts]);
+      setCurrentText("");
+    }
   };
 
   return (
@@ -37,6 +39,7 @@ export const HW3 = () => {
 
       <button id={"hw03-button"} onClick={() => handleSave(currentText)}>
         {" "}
+        Сохранить
       </button>
 
       <h1 style={{ marginTop: "50px" }}>СПИСОК ДЕЛ НА ДЕНЬ:</h1>
